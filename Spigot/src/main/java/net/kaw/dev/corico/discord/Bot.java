@@ -1,5 +1,5 @@
 /*
- * Copyright 2015 Austin Keener, Michael Ritter, Florian Spieß, and the JDA contributors
+ * Copyright 2015 Austin Keener, Michael Ritter, Florian Spieï¿½, and the JDA contributors
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -38,10 +38,8 @@ import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
 
 public class Bot extends ListenerAdapter {
 
-    private Parameters parameters;
-
-    public Bot() {
-        JDA jda = JDABuilder.createLight(parameters.getToken(), EnumSet.noneOf(GatewayIntent.class)) // slash commands don't need any intents
+    public static void main(String[] args) {
+        JDA jda = JDABuilder.createLight("BOT_TOKEN_HERE", EnumSet.noneOf(GatewayIntent.class)) // slash commands don't need any intents
                 .addEventListeners(new Bot())
                 .build();
 

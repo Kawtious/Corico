@@ -18,22 +18,14 @@
  * DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package net.kaw.dev.corico.discord;
+package net.kaw.dev.corico.spigot;
 
-public class Parameters implements IConfigurable {
+import org.bukkit.plugin.java.JavaPlugin;
 
-    private String token;
+public class Plugin extends JavaPlugin {
 
-    public Parameters(String token) {
-        this.token = token;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
+    @Override
+    public void onEnable() {
     }
 
 }
