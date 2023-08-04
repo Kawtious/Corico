@@ -1,1 +1,5 @@
 /Spigot/target/
+/Remote/target/
+Remote/config.json
+Remote/nb-configuration.xml
+Spigot/nb-configuration.xml
