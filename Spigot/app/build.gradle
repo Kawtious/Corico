@@ -9,6 +9,8 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+
+    id "fr.il_totore.manadrop" version "0.4.3"
 }
 
 repositories {
@@ -63,3 +65,14 @@ tasks.named('test') {
     // Use JUnit Platform for unit tests.
     useJUnitPlatform()
 }
+
+spigot {
+    desc {
+        named 'TestPlugin' //Default: the project name
+        version project.version //Default: the project version
+        authors 'Il_totore'
+        main 'fr.il_totore.entitymetadata.plugin.Main'
+    }
+}
+
+processResources.finalizedBy(spigotPlugin)
