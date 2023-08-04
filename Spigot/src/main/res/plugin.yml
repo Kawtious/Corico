@@ -1,0 +1,4 @@
+name: Corico
+version: 0.0.1
+main: net.kaw.dev.corico.spigot.Plugin
+api-version: 1.16

@@ -26,6 +26,11 @@ public class Plugin extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        this.saveDefaultConfig();
+    }
+
+    @Override
+    public void onDisable() {
     }
 
 }

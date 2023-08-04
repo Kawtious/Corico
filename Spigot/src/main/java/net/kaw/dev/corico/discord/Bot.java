@@ -38,9 +38,13 @@ import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
 
 public class Bot extends ListenerAdapter {
 
-    public static void main(String[] args) {
-        JDA jda = JDABuilder.createLight("BOT_TOKEN_HERE", EnumSet.noneOf(GatewayIntent.class)) // slash commands don't need any intents
-                .addEventListeners(new Bot())
+    public Bot(String token) {
+        this.runBot(token);
+    }
+
+    private void runBot(String token) {
+        JDA jda = JDABuilder.createLight(token, EnumSet.noneOf(GatewayIntent.class)) // slash commands don't need any intents
+                .addEventListeners(this)
                 .build();
 
         // These commands might take a few minutes to be active after creation/update/delete
@@ -89,15 +93,19 @@ public class Bot extends ListenerAdapter {
             return;
         }
         switch (event.getName()) {
-            case "ban" ->
+            case "ban":
                 ban(event);
-            case "say" ->
+                break;
+            case "say":
                 say(event, event.getOption("content").getAsString()); // content is required so no null-check here
-            case "leave" ->
+                break;
+            case "leave":
                 leave(event);
-            case "prune" -> // 2 stage command with a button prompt
+                break;
+            case "prune": // 2 stage command with a button prompt
                 prune(event);
-            default ->
+                break;
+            default:
                 event.reply("I can't handle that command right now :(").setEphemeral(true).queue();
         }
     }
